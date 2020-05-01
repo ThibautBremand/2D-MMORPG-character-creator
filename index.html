@@ -10,14 +10,11 @@
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.3/underscore.string.min.js"></script>
         <script type="text/javascript" src="Universal-LPC-Spritesheet-Character-Generator/jhash-2.1.min.js"></script>
         <script type="text/javascript" src="chargen.js"></script>
+        <script type="text/javascript" src="index.js"></script>
     </head>
     <body>
-        <div id="github"><a href="https://github.com/gaurav0/Universal-LPC-Spritesheet-Character-Generator"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a></div>
         <header>
-            <h1>Character Generator</h1>
-            <p class="subtitle">Create a character sprite sheet for your game using 100% open art.</p>
-            <h2>Based on <a href="https://github.com/jrconway3/Universal-LPC-spritesheet">Universal LPC Sprite Sheet</a></h2>
-            <h3>All art is dual licensed: GPL3 and CC-BY-SA3</h3>
+            <h1>Create a new character</h1>
         </header>
         <div id="previewAnimationsBox">
             Preview Animation:
@@ -83,8 +80,8 @@
                                 <label for="body-orc">Orc</label>
                             </li>
                             <li>
-                                <input type="radio" id="body-orc_red" name="body" data-file_female="body/female/red_orc.png" data-file_male="body/male/red_orc.png">
-                                <label for="body-orc_red">Red Orc</label>
+                                <input type="radio" id="body-red_orc" name="body" data-file_female="body/female/red_orc.png" data-file_male="body/male/red_orc.png">
+                                <label for="body-red_orc">Red Orc</label>
                             </li>
                             <li>
                                 <input type="radio" id="body-skeleton" name="body" data-required="sex=male" data-file="body/male/skeleton.png">
@@ -103,12 +100,12 @@
                                 <label for="eyes-blue">Blue</label>
                             </li>
                             <li>
-                                <input type="radio" id="eyes_brown" name="eyes" data-file_female="body/female/eyes/brown.png" data-file_male="body/male/eyes/brown.png">
-                                <label for="eyes_brown">Brown</label>
+                                <input type="radio" id="eyes-brown" name="eyes" data-file_female="body/female/eyes/brown.png" data-file_male="body/male/eyes/brown.png">
+                                <label for="eyes-brown">Brown</label>
                             </li>
                             <li>
-                                <input type="radio" id="eyes_gray" name="eyes" data-file_female="body/female/eyes/gray.png" data-file_male="body/male/eyes/gray.png">
-                                <label for="eyes_gray">Gray</label>
+                                <input type="radio" id="eyes-gray" name="eyes" data-file_female="body/female/eyes/gray.png" data-file_male="body/male/eyes/gray.png">
+                                <label for="eyes-gray">Gray</label>
                             </li>
                             <li>
                                 <input type="radio" id="eyes-green" name="eyes" data-file_female="body/female/eyes/green.png" data-file_male="body/male/eyes/green.png">
@@ -139,15 +136,15 @@
                                 <label for="nose-none">Default</label>
                             </li>
                             <li>
-                                <input type="radio" id="nose-big" name="nose" data-prohibited="body=orc,body=orc_red,body=skeleton" data-file_male_light="body/male/nose/bignose_light.png" data-file_female_light="body/female/nose/bignose_light.png" data-file_male_dark="body/male/nose/bignose_dark.png" data-file_female_dark="body/female/nose/bignose_dark.png" data-file_male_dark2="body/male/nose/bignose_dark2.png" data-file_female_dark2="body/female/nose/bignose_dark2.png" data-file_male_darkelf="body/male/nose/bignose_darkelf.png" data-file_female_darkelf="body/female/nose/bignose_darkelf.png" data-file_male_darkelf2="body/male/nose/bignose_darkelf2.png" data-file_female_darkelf2="body/female/nose/bignose_darkelf2.png" data-file_male_tanned="body/male/nose/bignose_tanned.png" data-file_female_tanned="body/female/nose/bignose_tanned.png" data-file_male_tanned2="body/male/nose/bignose_tanned2.png" data-file_female_tanned2="body/female/nose/bignose_tanned2.png">
+                                <input type="radio" id="nose-big" name="nose" data-prohibited="body=orc,body=red_orc,body=skeleton" data-file_male_light="body/male/nose/bignose_light.png" data-file_female_light="body/female/nose/bignose_light.png" data-file_male_dark="body/male/nose/bignose_dark.png" data-file_female_dark="body/female/nose/bignose_dark.png" data-file_male_dark2="body/male/nose/bignose_dark2.png" data-file_female_dark2="body/female/nose/bignose_dark2.png" data-file_male_darkelf="body/male/nose/bignose_darkelf.png" data-file_female_darkelf="body/female/nose/bignose_darkelf.png" data-file_male_darkelf2="body/male/nose/bignose_darkelf2.png" data-file_female_darkelf2="body/female/nose/bignose_darkelf2.png" data-file_male_tanned="body/male/nose/bignose_tanned.png" data-file_female_tanned="body/female/nose/bignose_tanned.png" data-file_male_tanned2="body/male/nose/bignose_tanned2.png" data-file_female_tanned2="body/female/nose/bignose_tanned2.png">
                                 <label for="nose-big">Big Nose</label>
                             </li>
                             <li>
-                                <input type="radio" id="nose-button" name="nose" data-prohibited="body=orc,body=orc_red,body=skeleton" data-file_male_light="body/male/nose/buttonnose_light.png" data-file_female_light="body/female/nose/buttonnose_light.png" data-file_male_dark="body/male/nose/buttonnose_dark.png" data-file_female_dark="body/female/nose/buttonnose_dark.png" data-file_male_dark2="body/male/nose/buttonnose_dark2.png" data-file_female_dark2="body/female/nose/buttonnose_dark2.png" data-file_male_darkelf="body/male/nose/buttonnose_darkelf.png" data-file_female_darkelf="body/female/nose/buttonnose_darkelf.png" data-file_male_darkelf2="body/male/nose/buttonnose_darkelf2.png" data-file_female_darkelf2="body/female/nose/buttonnose_darkelf2.png" data-file_male_tanned="body/male/nose/buttonnose_tanned.png" data-file_female_tanned="body/female/nose/buttonnose_tanned.png" data-file_male_tanned2="body/male/nose/buttonnose_tanned2.png" data-file_female_tanned2="body/female/nose/buttonnose_tanned2.png">
+                                <input type="radio" id="nose-button" name="nose" data-prohibited="body=orc,body=red_orc,body=skeleton" data-file_male_light="body/male/nose/buttonnose_light.png" data-file_female_light="body/female/nose/buttonnose_light.png" data-file_male_dark="body/male/nose/buttonnose_dark.png" data-file_female_dark="body/female/nose/buttonnose_dark.png" data-file_male_dark2="body/male/nose/buttonnose_dark2.png" data-file_female_dark2="body/female/nose/buttonnose_dark2.png" data-file_male_darkelf="body/male/nose/buttonnose_darkelf.png" data-file_female_darkelf="body/female/nose/buttonnose_darkelf.png" data-file_male_darkelf2="body/male/nose/buttonnose_darkelf2.png" data-file_female_darkelf2="body/female/nose/buttonnose_darkelf2.png" data-file_male_tanned="body/male/nose/buttonnose_tanned.png" data-file_female_tanned="body/female/nose/buttonnose_tanned.png" data-file_male_tanned2="body/male/nose/buttonnose_tanned2.png" data-file_female_tanned2="body/female/nose/buttonnose_tanned2.png">
                                 <label for="nose-button">Button Nose</label>
                             </li>
                             <li>
-                                <input type="radio" id="nose-straight" name="nose" data-prohibited="body=orc,body=orc_red,body=skeleton" data-file_male_light="body/male/nose/straightnose_light.png" data-file_female_light="body/female/nose/straightnose_light.png" data-file_male_dark="body/male/nose/straightnose_dark.png" data-file_female_dark="body/female/nose/straightnose_dark.png" data-file_male_dark2="body/male/nose/straightnose_dark2.png" data-file_female_dark2="body/female/nose/straightnose_dark2.png" data-file_male_darkelf="body/male/nose/straightnose_darkelf.png" data-file_female_darkelf="body/female/nose/straightnose_darkelf.png" data-file_male_darkelf2="body/male/nose/straightnose_darkelf2.png" data-file_female_darkelf2="body/female/nose/straightnose_darkelf2.png" data-file_male_tanned="body/male/nose/straightnose_tanned.png" data-file_female_tanned="body/female/nose/straightnose_tanned.png" data-file_male_tanned2="body/male/nose/straightnose_tanned2.png" data-file_female_tanned2="body/female/nose/straightnose_tanned2.png">
+                                <input type="radio" id="nose-straight" name="nose" data-prohibited="body=orc,body=red_orc,body=skeleton" data-file_male_light="body/male/nose/straightnose_light.png" data-file_female_light="body/female/nose/straightnose_light.png" data-file_male_dark="body/male/nose/straightnose_dark.png" data-file_female_dark="body/female/nose/straightnose_dark.png" data-file_male_dark2="body/male/nose/straightnose_dark2.png" data-file_female_dark2="body/female/nose/straightnose_dark2.png" data-file_male_darkelf="body/male/nose/straightnose_darkelf.png" data-file_female_darkelf="body/female/nose/straightnose_darkelf.png" data-file_male_darkelf2="body/male/nose/straightnose_darkelf2.png" data-file_female_darkelf2="body/female/nose/straightnose_darkelf2.png" data-file_male_tanned="body/male/nose/straightnose_tanned.png" data-file_female_tanned="body/female/nose/straightnose_tanned.png" data-file_male_tanned2="body/male/nose/straightnose_tanned2.png" data-file_female_tanned2="body/female/nose/straightnose_tanned2.png">
                                 <label for="nose-straight">Straight Nose</label>
                             </li>
                         </ul>
@@ -2707,11 +2704,11 @@
             <label for="ears-none">Default</label>
         </li>
         <li>
-            <input type="radio" id="ears-big" name="ears" data-prohibited="body=orc,body=orc_red,body=skeleton" data-file_male_light="body/male/ears/bigears_light.png" data-file_female_light="body/female/ears/bigears_light.png" data-file_male_dark="body/male/ears/bigears_dark.png" data-file_female_dark="body/female/ears/bigears_dark.png" data-file_male_dark2="body/male/ears/bigears_dark2.png" data-file_female_dark2="body/female/ears/bigears_dark2.png" data-file_male_darkelf="body/male/ears/bigears_darkelf.png" data-file_female_darkelf="body/female/ears/bigears_darkelf.png" data-file_male_darkelf2="body/male/ears/bigears_darkelf2.png" data-file_female_darkelf2="body/female/ears/bigears_darkelf2.png" data-file_male_tanned="body/male/ears/bigears_tanned.png" data-file_female_tanned="body/female/ears/bigears_tanned.png" data-file_male_tanned2="body/male/ears/bigears_tanned2.png" data-file_female_tanned2="body/female/ears/bigears_tanned2.png">
+            <input type="radio" id="ears-big" name="ears" data-prohibited="body=orc,body=red_orc,body=skeleton" data-file_male_light="body/male/ears/bigears_light.png" data-file_female_light="body/female/ears/bigears_light.png" data-file_male_dark="body/male/ears/bigears_dark.png" data-file_female_dark="body/female/ears/bigears_dark.png" data-file_male_dark2="body/male/ears/bigears_dark2.png" data-file_female_dark2="body/female/ears/bigears_dark2.png" data-file_male_darkelf="body/male/ears/bigears_darkelf.png" data-file_female_darkelf="body/female/ears/bigears_darkelf.png" data-file_male_darkelf2="body/male/ears/bigears_darkelf2.png" data-file_female_darkelf2="body/female/ears/bigears_darkelf2.png" data-file_male_tanned="body/male/ears/bigears_tanned.png" data-file_female_tanned="body/female/ears/bigears_tanned.png" data-file_male_tanned2="body/male/ears/bigears_tanned2.png" data-file_female_tanned2="body/female/ears/bigears_tanned2.png">
             <label for="ears-big">Big Ears</label>
         </li>
         <li>
-            <input type="radio" id="ears-elven" name="ears" data-prohibited="body=orc,body=orc_red,body=skeleton" data-file_male_light="body/male/ears/elvenears_light.png" data-file_female_light="body/female/ears/elvenears_light.png" data-file_male_dark="body/male/ears/elvenears_dark.png" data-file_female_dark="body/female/ears/elvenears_dark.png" data-file_male_dark2="body/male/ears/elvenears_dark2.png" data-file_female_dark2="body/female/ears/elvenears_dark2.png" data-file_male_darkelf="body/male/ears/elvenears_darkelf.png" data-file_female_darkelf="body/female/ears/elvenears_darkelf.png" data-file_male_darkelf2="body/male/ears/elvenears_darkelf2.png" data-file_female_darkelf2="body/female/ears/elvenears_darkelf2.png" data-file_male_tanned="body/male/ears/elvenears_tanned.png" data-file_female_tanned="body/female/ears/elvenears_tanned.png" data-file_male_tanned2="body/male/ears/elvenears_tanned2.png" data-file_female_tanned2="body/female/ears/elvenears_tanned2.png">
+            <input type="radio" id="ears-elven" name="ears" data-prohibited="body=orc,body=red_orc,body=skeleton" data-file_male_light="body/male/ears/elvenears_light.png" data-file_female_light="body/female/ears/elvenears_light.png" data-file_male_dark="body/male/ears/elvenears_dark.png" data-file_female_dark="body/female/ears/elvenears_dark.png" data-file_male_dark2="body/male/ears/elvenears_dark2.png" data-file_female_dark2="body/female/ears/elvenears_dark2.png" data-file_male_darkelf="body/male/ears/elvenears_darkelf.png" data-file_female_darkelf="body/female/ears/elvenears_darkelf.png" data-file_male_darkelf2="body/male/ears/elvenears_darkelf2.png" data-file_female_darkelf2="body/female/ears/elvenears_darkelf2.png" data-file_male_tanned="body/male/ears/elvenears_tanned.png" data-file_female_tanned="body/female/ears/elvenears_tanned.png" data-file_male_tanned2="body/male/ears/elvenears_tanned2.png" data-file_female_tanned2="body/female/ears/elvenears_tanned2.png">
             <label for="ears-elven">Elven Ears</label>
         </li>
     </ul>
@@ -2785,10 +2782,18 @@
 </section>
 </form>
 <section id="preview">
+    <div id="characterName">
+        <p>Choose your name :</p>
+        <input type="text" id="name" name="name" required minlength="1">
+        <br>
+        <button type="button" onclick="getUrlParams()">
+            Let's go
+        </button>
+    </div>
     <p class="instr">The complete resulting sprite sheet for your character:</p>
     <canvas id="spritesheet" width="832" height="1344">HTML5 Browser required.</canvas>
 </section>
-<p id="source"><a href="https://github.com/Gaurav0/Universal-LPC-Spritesheet-Character-Generator/commits/master">Source Code</a> &nbsp; <a href="LICENSE">LICENSE</a> &nbsp; <a href="Universal-LPC-spritesheet/AUTHORS.txt">Credits</a></p>
+
 <p id="save"><a id="saveAsPNG"><input type="button" value="Save Result As PNG"></a></p>
 </body>
 </html>
