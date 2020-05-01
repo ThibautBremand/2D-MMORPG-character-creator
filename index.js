@@ -9,7 +9,7 @@ function getUrlParams() {
     }
     const pos = window.location.href.lastIndexOf('?')
     if (pos < 0) {
-        sendJSON(newCharacterRoute, {Name: inputVal, Tiles: ""})
+        sendJSON(newCharacterRoute, {Name: inputVal, Tiles: ''})
         return
     }
     let params = window.location.href.substring(pos + 1).split('&')
@@ -36,11 +36,11 @@ async function sendJSON(url, object) {
             alert ('The server encountered an error!')
             return
         }
-        if (response.status == 200) {
+        if (response.status === 200) {
             alert ('It worked! You can play now.')
             return
         }
-        if (response.status == 208) {
+        if (response.status === 208) {
             alert ('This username is already taken!')
             return
         }
