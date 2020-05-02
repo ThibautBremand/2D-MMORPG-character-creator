@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>Load a map</title>
+        <link rel="stylesheet" type="text/css" href="Universal-LPC-Spritesheet-Character-Generator/chargen.css">
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Load a map</h1>
+        </header>
+
+        <div id='loadmap'>
+            <form id='mapdata'>
+                <label for="mapname">Map name:</label><br>
+                <input type="text" id="mapname" name="mapname"><br>
+                <label for="mapjson">JSON File:</label><br>
+                <input type="file" id="mapjson" accept=".json">
+            </form> 
+            <br>
+            <button type="button" onclick="handleMapInputs()">
+                Let's go
+            </button>
+        </div>
+    </body>
+</html>
